@@ -1,46 +1,56 @@
 import React , { useState } from "react";
-// import Action from "..."
+import actionBG from "../../assets/Action.png";
+import dramaBG from "../../assets/Drama.png";
+import romanceBG from "../../assets/Romance.png";
+import thrillerBG from "../../assets/Thriller.png";
+import WesternBG from "../../assets/Western.png";
+import horrorBG from "../../assets/Horror.png";
+import fantasyBG from "../../assets/Fantasy.png";
+import musicBG from "../../assets/Music.png";
+import fictionBG from "../../assets/Fantasy.png"
+
 
 export  function GenrePage() {
   const [genres, setSetGenres] = useState([
     {
       title: "Action",
-      bgImage:""
+      bgImage:actionBG,
     },
     {
       title: "Drama",
-      bgImage:""
+      bgImage:dramaBG,
     },
     {
       title: "Romance",
-      bgImage:""
+      bgImage:romanceBG,
     },
     {
       title: "Thriller",
-      bgImage:""
+      bgImage:thrillerBG,
     },
     {
       title: "Western",
-      bgImage:""
+      bgImage:WesternBG,
     },
     {
       title: "Horror",
-      bgImage:""
+      bgImage:horrorBG ,
     },
     {
       title: "Fantasy",
-      bgImage:""
+      bgImage:fantasyBG,
     },
     {
       title: "Music",
-      bgImage:""
+      bgImage:musicBG,
     },
     {
       title: "Fiction",
-      bgImage:""
+      bgImage:fictionBG,
     },
   ]);
-  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([1, 3, 5]);
   return <div>Genrepage</div>;
   
 }
+export default GenrePage;

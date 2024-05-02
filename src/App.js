@@ -2,6 +2,7 @@ import Registration from "./Pages/Registration/Registration";
 import {GenrePage} from "./Pages/genre/GenrePage"; 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">
