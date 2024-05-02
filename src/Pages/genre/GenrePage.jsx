@@ -1,4 +1,5 @@
 import React , { useState } from "react";
+import styles from "../genre/GenrePage.module.css";
 import actionBG from "../../assets/Action.png";
 import dramaBG from "../../assets/Drama.png";
 import romanceBG from "../../assets/Romance.png";
@@ -50,7 +51,34 @@ export  function GenrePage() {
     },
   ]);
   const [selectedGenres, setSelectedGenres] = useState([1, 3, 5]);
-  return <div>Genrepage</div>;
+  const removeGenre = (index) => {
+    console.log(index);
+    const newGenres = selectedGenres.filter((item) => item !== index);
+    setSelectedGenres(newGenres);
+
+  }
+  return (
+  <div className={styles.page}>
+  <div className={styles.left}>
+    <h2>Super app</h2>
+    <h1>Choose your entertainment category</h1>
+   
+    <div className={styles.selected}>
+      {selectedGenres.map((item)=>(
+        <div key={item} className={styles.selectedGenre}>
+          {genres[item].title}
+          <img src={genres[item].bgImage} alt="background Image"/>
+          <button onClick={() => removeGenre(item)}>X</button>
+          </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+  </div>
+  );
   
 }
 export default GenrePage;
