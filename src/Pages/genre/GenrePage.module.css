@@ -6,6 +6,33 @@
     height:100%;
     width:100vw;
 }
+.left {
+display: flex;
+width: 50vw;
+height: 100%;
+flex-direction: column;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    height: 100%;
+}
+.genreCard{
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height:100%;
+    cursor: pointer;
+
+    background-color: pink;
+    font-family: "DM Sans", sans-serif;
+
+}
+
 
 h2{
     font-family: "Single Day", cursive;
@@ -16,6 +43,10 @@ h1 {
     font-family: "Roboto", sans-serif;
     color: white;
 
+}
+.genreGrid {
+    display:grid;
+    grid-template-columns: repeat(3 , 1fr);
 }
 button{
     all:unset;

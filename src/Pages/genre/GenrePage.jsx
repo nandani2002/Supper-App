@@ -50,13 +50,30 @@ export  function GenrePage() {
       bgImage:fictionBG,
     },
   ]);
-  const [selectedGenres, setSelectedGenres] = useState([1, 3, 5]);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  
+  const bgColors = [
+		"#11B800",
+		"#D7A4FF",
+		"#11B800",
+		"#84C2FF",
+		"#902500",
+		"#7358FF",
+		"#FF4ADE",
+		"#E61E32",
+		"#6CD061",
+	];
   const removeGenre = (index) => {
     console.log(index);
     const newGenres = selectedGenres.filter((item) => item !== index);
     setSelectedGenres(newGenres);
 
-  }
+  };
+  const selectGenre = (index)=>{
+    setSelectedGenres([...selectedGenres, index]);
+  };
+
+ 
   return (
   <div className={styles.page}>
   <div className={styles.left}>
@@ -69,6 +86,7 @@ export  function GenrePage() {
           {genres[item].title}
           <img src={genres[item].bgImage} alt="background Image"/>
           <button onClick={() => removeGenre(item)}>X</button>
+
           </div>
 
       ))}
@@ -76,7 +94,24 @@ export  function GenrePage() {
     </div>
 
   </div>
+  <div className={styles.right}>
+    <div className={styles.genreGrid}>
+    {genres.map((genre, index) => (
+   <div
+    key ={index} className={styles.genreCard}
+    onClick={() => selectGenre(index)}
+    style={{backgroundColor:bgColors[index]}}
+  >
+   {genre.title}
 
+   <img src={genre.bgImage} alt="photo"/>
+</div>
+))}
+
+  </div>
+
+
+  </div>
   </div>
   );
   
