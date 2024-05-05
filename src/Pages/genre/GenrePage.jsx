@@ -72,8 +72,16 @@ export  function GenrePage() {
   const selectGenre = (index)=>{
     setSelectedGenres([...selectedGenres, index]);
   };
+  const handleNext = ()=>{
+if (selectedGenres.length <3){
+  alert("Minimum 3 category required");
+}
+else {
+  alert("Successfully submit");
+}
+  
+  }
 
- 
   return (
   <div className={styles.page}>
   <div className={styles.left}>
@@ -109,7 +117,7 @@ export  function GenrePage() {
 ))}
 
   </div>
-<button>Next</button>
+<button onClick = {handleNext}>Next</button>
 
   </div>
   </div>
