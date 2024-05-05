@@ -109,7 +109,7 @@ export  function GenrePage() {
 ))}
 
   </div>
-
+<button>Next</button>
 
   </div>
   </div>
