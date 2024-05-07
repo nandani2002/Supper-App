@@ -51,6 +51,7 @@ export  function GenrePage() {
     },
   ]);
   const [selectedGenres, setSelectedGenres] = useState([]);
+  const [lengthWarning, setLengthWarning] = useState(false);
   
   const bgColors = [
 		"#11B800",
@@ -69,26 +70,32 @@ export  function GenrePage() {
     setSelectedGenres(newGenres);
 
   };
-  const selectGenre = (index)=>{
-    setSelectedGenres([...selectedGenres, index]);
-  };
-  const handleNext = ()=>{
-if (selectedGenres.length <3){
-  alert("Minimum 3 category required");
-}
-else {
-  alert("Successfully submit");
-}
-  
-  };
-  
+
+
+  const selectGenre = (index) => {
+		//one element will get added after the execution of this function
+		if (selectedGenres.length == 2) {
+			// in future, the length will become 3
+			setLengthWarning(false);
+		}
+		// index  = 4
+		setSelectedGenres([...selectedGenres, index]);
+	};
+  const handleNext = () => {
+		if (selectedGenres.length < 3) {
+			setLengthWarning(true);
+		} else {
+			setLengthWarning(false);
+		}
+	};
+
 
   return (
   <div className={styles.page}>
   <div className={styles.left}>
     <h2>Super app</h2>
     <h1>Choose your entertainment category</h1>
-   
+    {lengthWarning && <p>Minimum 3 category required</p>}
     <div className={styles.selected}>
       {selectedGenres.map((item)=>(
         <div key={item} className={styles.selectedGenre}>

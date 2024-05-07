@@ -65,7 +65,7 @@ h1 {
  .selectedGenre {
     display: flex;
     justify-content: space-around;
-    border-radius: 20px;
+    border-radius: 31px;
     padding: 2px 0px;
     margin: 8px 8px;
     color: white;
@@ -77,18 +77,27 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+   text-align: center; 
 }
+
 .selectedGenre button {
     font-size: large;
     background-color: transparent;
     border: none;
     color: darkgreen;
-  font-size: large;
-  background-color: transparent;
-  border: none;
-  color: darkgreen;
- 
+    vertical-align: middle;
+
+
+}
+.next{
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  width: 200px;
+  height:56px;
+  background-color: #148A08;
+  border-radius: 38.86px;
+  margin: top 100px;
 }
