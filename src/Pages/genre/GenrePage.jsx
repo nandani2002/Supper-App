@@ -80,7 +80,8 @@ else {
   alert("Successfully submit");
 }
   
-  }
+  };
+  
 
   return (
   <div className={styles.page}>
@@ -92,8 +93,7 @@ else {
       {selectedGenres.map((item)=>(
         <div key={item} className={styles.selectedGenre}>
           {genres[item].title}
-          <img src={genres[item].bgImage} alt="background Image"/>
-          <button onClick={() => removeGenre(item)}>X</button>
+             <button onClick={() => removeGenre(item)}>X</button>
 
           </div>
 
@@ -117,7 +117,7 @@ else {
 ))}
 
   </div>
-<button onClick = {handleNext}>Next</button>
+<button className={styles.next} onClick = {handleNext}>Next</button>
 
   </div>
   </div>
